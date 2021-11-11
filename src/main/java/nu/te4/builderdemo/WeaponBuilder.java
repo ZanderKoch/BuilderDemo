@@ -7,27 +7,38 @@ package nu.te4.builderdemo;
 
 /**
  *
- * @author TE4-Lärardator
+ * @author Zander Koch
  */
-public class Weapon {
+public class WeaponBuilder{
     private String name; 
     private int durability;
     private int strength; 
     private double weight;
-
-    public Weapon(String name, int durability, int strength, double weight) {
+    
+    
+    //builder methods
+    public WeaponBuilder name(String name){
         this.name = name;
-        this.durability = durability;
-        this.strength = strength;
-        this.weight = weight;
+        return this;
     }
     
-    public Weapon(WeaponBuilder builder){
-        this.name = builder.getName();
-        this.durability = builder.getDurability();
-        this.strength = builder.getStrength();
-        this.weight = builder.getWeight();
+    public WeaponBuilder durability(int durability){
+        this.durability = durability;
+        return this;
     }
+    
+    public WeaponBuilder strength(int strength){
+        this.strength = strength;
+        return this;
+    }
+    
+    public WeaponBuilder weight(double weight){
+        this.weight = weight;
+        return this;
+    }
+    
+    
+    //getters and setters
 
     public String getName() {
         return name;
@@ -60,6 +71,5 @@ public class Weapon {
     public void setWeight(double weight) {
         this.weight = weight;
     }
-    
     
 }
