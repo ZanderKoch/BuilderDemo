@@ -37,9 +37,23 @@ public class WeaponBuilder{
         return this;
     }
     
+    public Weapon build(){
+        if(name == null){
+            throw new IllegalStateException("weapon must have a name");
+        }
+        if(durability == 0){
+            throw new IllegalStateException("weapon must have durability");
+        }
+        if(strength <= 0){
+            throw new IllegalStateException("weapon must have strenght value");
+        }
+        if(weight <= 0){
+            throw new IllegalStateException("weapon must have weight value");
+        }
+        return new Weapon(this);
+    }
     
     //getters and setters
-
     public String getName() {
         return name;
     }
