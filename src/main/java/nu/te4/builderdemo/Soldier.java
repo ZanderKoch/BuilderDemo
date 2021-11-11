@@ -25,6 +25,10 @@ public class Soldier {
         this.armors = armors;
         this.weapon = weapon;
     }
+    
+    public Soldier(SoldierBuilder){
+        
+    }
 
     public String getName() {
         return name;
