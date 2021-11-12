@@ -43,4 +43,67 @@ class SoldierBuilder {
         this.weapon = weapon;
         return this;
     }
+    
+    public Soldier build(){
+        if(name == null){
+            throw new IllegalStateException("soldier must have a name");
+        }
+        if(health <= 0){
+            throw new IllegalStateException("soldier health must be positive");
+        }
+        if(age <= 0){
+            throw new IllegalStateException("soldier age must be positive");
+        }
+        if(armors.isEmpty()){
+            throw new IllegalStateException("soldier must have armor");
+        }
+        if(weapon == null){
+            throw new IllegalStateException("soldier must have weapon");
+        }
+        
+        return new Soldier(this);
+    }
+
+    //getters and setters
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public List<Armor> getArmors() {
+        return armors;
+    }
+
+    public void setArmors(List<Armor> armors) {
+        this.armors = armors;
+    }
+
+    public Weapon getWeapon() {
+        return weapon;
+    }
+
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
+    }
+    
+    
 }

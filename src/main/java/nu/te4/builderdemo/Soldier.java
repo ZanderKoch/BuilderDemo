@@ -26,8 +26,12 @@ public class Soldier {
         this.weapon = weapon;
     }
     
-    public Soldier(SoldierBuilder){
-        
+    public Soldier(SoldierBuilder builder){
+        this.name = builder.getName();
+        this.health = builder.getHealth();
+        this.age = builder.getAge();
+        this.armors = builder.getArmors();
+        this.weapon = builder.getWeapon();
     }
 
     public String getName() {
