@@ -74,5 +74,28 @@ public class Soldier {
         this.weapon = weapon;
     }
     
-    
+    @Override
+    public String toString(){
+      int defenceTotal = 0;
+      
+      String result;
+      result =  "**Soldier**\n\r";
+      result += "name: " + this.name + "\n\r";
+      result += "age: " + Integer.toString(age) + "\n\r";
+      result += "armors:\n\r";
+      for(Armor armor : this.armors){
+          result += " *" + armor.getName() + "\n\r";
+          result += "  -durability: " + armor.getDurability() + "\n\r";
+          result += "  -defence: " + armor.getDefence() + "\n\r";
+          defenceTotal += armor.getDefence();
+      }
+      result += "total defence: " + defenceTotal + "\n\r";
+      result += "weapon: " + weapon.getName() + "\n\r";
+      result += " -strenght: " + Integer.toString(weapon.getStrength()) + 
+             "\n\r";
+      result += " -durability: " + Integer.toString(weapon.getDurability()) +
+              "\n\r";
+      result += " -weight: " + Double.toString(weapon.getWeight()) + "\n\r";
+      return result; 
+    }
 }
